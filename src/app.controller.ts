@@ -1,4 +1,4 @@
-import { Get, Controller, Post, Body} from '@nestjs/common';
+import { Get, Controller, Post, Delete, Put, Body, Param} from '@nestjs/common';
 import { AppService } from './app.service';
 import { Particle } from 'classes/particle';
 import { Collision } from 'classes/collision';
@@ -10,16 +10,36 @@ export class AppController {
 
   @Get()
   root(): string {
-    return "yo";
+    return "version: 1.0.1";
   }
 
-  @Post()
-    async create(@Body() createParticle: Particle) {
-    this.particleService.create(createParticle);
+  @Get('/particle')
+  async findParticle(@Param() params) {
+    return this.particleService.read();
+  }
+
+  @Get('/particle:id')
+  async findOneParticle(@Param() params) {
+    return this.particleService.readOne(params.id);
+  }
+
+  @Post("/particle")
+  async create(@Body() createParticle: Particle) {
+      return this.particleService.create(createParticle);
+  }
+
+  @Delete("/particle:id")
+  async delete(@Param() params) {
+      return this.particleService.deleteOne(params.id);
+  }
+
+  @Put("/particle:id")
+  async update(@Param() params, @Body() updateParticle: Particle) {
+      return this.particleService.updateOne(params.id, updateParticle);
   }
 
   @Post("/collision")
-    async createCollision(@Body() collision: Collision) {
+  async createCollision(@Body() collision: Collision) {
     //this.appService.createParticle(collision);
   }
 }

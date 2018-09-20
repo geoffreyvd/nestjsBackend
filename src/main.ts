@@ -6,8 +6,8 @@ async function bootstrap() {
   const app = await NestFactory.create(AppModule);
   app.enableCors();
   const options = new DocumentBuilder()
-    .setTitle('Cats example')
-    .setDescription('The cats API description')
+    .setTitle('LHC collisions')
+    .setDescription('The LHC API description')
     .setVersion('1.0')
     .addTag('cats')
     .build();

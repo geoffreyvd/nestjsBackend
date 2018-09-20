@@ -2,11 +2,17 @@ import { ApiModelProperty } from '@nestjs/swagger';
 
 export class Particle {
   @ApiModelProperty()
+  readonly id: number;
+
+  @ApiModelProperty()
   readonly name: string;
 
   @ApiModelProperty()
-  readonly age: number;
+  readonly energy: number;
 
   @ApiModelProperty()
-  readonly breed: string;
+  readonly speed: number;
+
+  @ApiModelProperty()
+  readonly mass: number;
 }
