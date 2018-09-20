@@ -1,8 +1,8 @@
 import { Get, Controller, Post, Delete, Put, Body, Param} from '@nestjs/common';
 import { AppService } from './app.service';
-import { Particle } from 'classes/particle';
-import { Collision } from 'classes/collision';
-import { ParticleService } from 'services/particleService';
+import { Particle } from './classes/particle';
+import { Collision } from './classes/collision';
+import { ParticleService } from './services/particleService';
 
 @Controller()
 export class AppController {
