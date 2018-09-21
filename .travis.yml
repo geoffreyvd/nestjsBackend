@@ -13,5 +13,5 @@ before_install:
 install:
   - npm install
 script:
-  - npm run-script test
+  - npm run-script lint
 after_success: npm run coverage

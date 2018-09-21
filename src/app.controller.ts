@@ -10,7 +10,7 @@ export class AppController {
 
   @Get()
   root(): string {
-    return "version: 1.0.1";
+    return 'version: 1.0.1';
   }
 
   @Get('/particle')
@@ -23,24 +23,23 @@ export class AppController {
     return this.particleService.readOne(params.id);
   }
 
-  @Post("/particle")
+  @Post('/particle')
   async create(@Body() createParticle: Particle) {
       return this.particleService.create(createParticle);
   }
 
-  @Delete("/particle:id")
+  @Delete('/particle:id')
   async delete(@Param() params) {
       return this.particleService.deleteOne(params.id);
   }
 
-  @Put("/particle:id")
+  @Put('/particle:id')
   async update(@Param() params, @Body() updateParticle: Particle) {
       return this.particleService.updateOne(params.id, updateParticle);
   }
 
-  @Post("/collision")
+  @Post('/collision')
   async createCollision(@Body() collision: Collision) {
-    //this.appService.createParticle(collision);
+    // this.appService.createParticle(collision);
   }
 }
-
