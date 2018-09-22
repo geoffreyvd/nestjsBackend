@@ -7,12 +7,12 @@ export class CollisionService {
         {id: 1, name: 'foton', energy: 0, speed: 3436821, mass: 0},
         {id: 3, name: 'foton', energy: 0, speed: 3436821, mass: 0}],
         date: null, event: 9,
-        recources: ["particels", "2", "/particle/1", "/particle/3"]},
+        recources: ['particels', '2', '/particle/1', '/particle/3']},
         {id: 1, particles: [
         {id: 1, name: 'foton', energy: 0, speed: 3436821, mass: 0},
         {id: 3, name: 'foton', energy: 0, speed: 3436821, mass: 0}],
-        date: null, event: 9, recources: ["particels", "2", "/particle/1",
-        "/particle/3"]}];
+        date: null, event: 9, recources: ['particels', '2', '/particle/1',
+        '/particle/3']}];
 
     create(collision: Collision): Collision[]{
         this.collisions.push(collision);

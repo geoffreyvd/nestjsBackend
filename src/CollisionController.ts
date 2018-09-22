@@ -2,13 +2,11 @@ import { Get, Controller, Post, Delete, Put, Body, Param} from '@nestjs/common';
 import { AppService } from './app.service';
 import { Particle } from './classes/particle';
 import { Collision } from './classes/collision';
-import { CollisionService } from "./services/collisionService"
+import { CollisionService } from './services/collisionService';
 
 @Controller()
 export class CollisionController {
   constructor(private readonly collisionService: CollisionService) {}
-  
-  //Collision end points
 
   @Get('/collision')
   async findCollision(@Param() params) {
