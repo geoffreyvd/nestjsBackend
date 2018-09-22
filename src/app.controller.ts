@@ -3,6 +3,7 @@ import { AppService } from './app.service';
 import { Particle } from './classes/particle';
 import { Collision } from './classes/collision';
 import { ParticleService } from './services/particleService';
+import { CollisionService } from "./services/collisionService"
 
 @Controller()
 export class AppController {
@@ -37,9 +38,6 @@ export class AppController {
   async update(@Param() params, @Body() updateParticle: Particle) {
       return this.particleService.updateOne(params.id, updateParticle);
   }
-
-  @Post('/collision')
-  async createCollision(@Body() collision: Collision) {
-    // this.appService.createParticle(collision);
-  }
+  
+  //Collision end points
 }

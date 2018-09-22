@@ -13,4 +13,7 @@ export class Collision {
 
   @ApiModelProperty()
   readonly event: number;
+
+  @ApiModelProperty()
+  readonly recources: string[];
 }
